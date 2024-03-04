@@ -1,0 +1,55 @@
+samples:
+  - Collibri_standard_protocol-HBR-Collibri-100_ng-2_S1_L001_R1_001
+  - Collibri_standard_protocol-HBR-Collibri-100_ng-2_S1_L001_R2_001
+  - Collibri_standard_protocol-HBR-Collibri-100_ng-3_S2_L001_R1_001
+  - Collibri_standard_protocol-HBR-Collibri-100_ng-3_S2_L001_R2_001
+  - Collibri_standard_protocol-UHRR-Collibri-100_ng-2_S3_L001_R1_001
+  - Collibri_standard_protocol-UHRR-Collibri-100_ng-2_S3_L001_R2_001
+  - Collibri_standard_protocol-UHRR-Collibri-100_ng-3_S4_L001_R1_001
+  - Collibri_standard_protocol-UHRR-Collibri-100_ng-3_S4_L001_R2_001
+  - KAPA_mRNA_HyperPrep_-HBR-KAPA-100_ng_total_RNA-2_S5_L001_R1_001
+  - KAPA_mRNA_HyperPrep_-HBR-KAPA-100_ng_total_RNA-2_S5_L001_R2_001
+  - KAPA_mRNA_HyperPrep_-HBR-KAPA-100_ng_total_RNA-3_S6_L001_R1_001
+  - KAPA_mRNA_HyperPrep_-HBR-KAPA-100_ng_total_RNA-3_S6_L001_R2_001
+  - KAPA_mRNA_HyperPrep_-UHRR-KAPA-100_ng_total_RNA-2_S7_L001_R1_001
+  - KAPA_mRNA_HyperPrep_-UHRR-KAPA-100_ng_total_RNA-2_S7_L001_R2_001
+  - KAPA_mRNA_HyperPrep_-UHRR-KAPA-100_ng_total_RNA-3_S8_L001_R1_001
+  - KAPA_mRNA_HyperPrep_-UHRR-KAPA-100_ng_total_RNA-3_S8_L001_R2_001
+
+
+
+directories:
+  raw_data: data/RNA-seq-sample-data
+  raw_quality: quality/raw_fastqc
+  proc_quality: quality/proc_fastqc
+  processed: data/processed
+  adapters: data/data_ref_annot/adapters.fa
+  indexed_genome: data/indexed  # Directory for STAR indexed genome
+  mapping: mapping/mapping_1  # Directory for STAR output
+  sorted_bam: mapping/sort_1  # Directory for sorted BAM files
+  counts: results/counts  # Directory for featureCounts output
+
+genome:
+  fasta: data/data_ref_annot/chr19_20Mb.fa
+  gtf: data/data_ref_annot/chr19_20Mb.gtf
+
+star:
+  runThreadN: 8
+  genomeSAindexNbases: 11
+  outSAMtype: BAM SortedByCoordinate
+
+featureCounts:
+  annotation: data/data_ref_annot/chr19_20Mb.gtf
+  output: count/counts.txt
+
+
+bbduk:
+  ktrim: "r"
+  k: 23
+  mink: 11
+  hdist: 1
+  tpe: true
+  tbo: true
+  qtrim: "r"
+  trimq: 10
+
