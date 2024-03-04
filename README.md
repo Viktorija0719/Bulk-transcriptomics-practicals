@@ -23,34 +23,33 @@ This project contains a Snakemake workflow designed for comprehensive RNA sequen
 - **samtools**: A suite of programs for interacting with high-throughput sequencing data.
 - **featureCounts (part of subread)**: A software package used for counting reads to genomic features such as genes.
 
-## Usage
+### Initial Directory Structure
 
-Your data should be organized as follows for the workflow to function correctly:
-data/
-├── data_ref_annot/
-│   ├── adapters.fa
-│   ├── chr19_20Mb.bed
-│   ├── chr19_20Mb.fa
-│   └── chr19_20Mb.gtf
-└── RNA-seq-sample-data/
-    ├── Sample_1_R1.fastq.gz
-    ├── Sample_1_R2.fastq.gz
-    ...
+The project directory is organized as follows:
+
+- `data/`: This directory contains all data-related directories.
+  - `data_ref_annot/`: Inside this directory, you'll find reference and annotation files necessary for the workflow.
+    - `adapters.fa`: Adapter sequences for trimming.
+    - `chr19_20Mb.bed`: BED file for the genomic region of interest.
+    - `chr19_20Mb.fa`: Reference genome sequence for the specified genomic region.
+    - `chr19_20Mb.gtf`: Gene annotation file in GTF format.
+  - `RNA-seq-sample-data/`: This directory contains all the RNA-seq sample data files.
 
 
+### Workflow-Generated Directories
 
-```markdown
-```
-.
-├── data/
-│   ├── data_ref_annot/
-│   │   ├── adapters.fa
-│   │   ├── chr19_20Mb.bed
-│   │   ├── chr19_20Mb.fa
-│   │   └── chr19_20Mb.gtf
-│   └── RNA-seq-sample-data/
-│       ├── Sample_1_R1.fastq.gz
-│       ├── Sample_1_R2.fastq.gz
-│       ...
-```
-```
+The workflow will create and use the following directories:
+
+- `data/processed`: Stores trimmed sequencing reads.
+- `quality/raw_fastqc` and `quality/proc_fastqc`: Contain FastQC reports for raw and trimmed reads, respectively.
+- `quality/raw_multiqc` and `quality/proc_multiqc`: Contain MultiQC reports aggregating FastQC results before and after trimming.
+- `mapping/mapping_1`: Stores STAR aligner output files.
+- `mapping/sort_1`: Contains sorted BAM files.
+- `count/counts`: Stores gene quantification results from featureCounts.
+
+
+### Running the Workflow
+
+
+
+
