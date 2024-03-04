@@ -37,3 +37,20 @@ data/
     ├── Sample_1_R2.fastq.gz
     ...
 
+
+
+```markdown
+```
+.
+├── data/
+│   ├── data_ref_annot/
+│   │   ├── adapters.fa
+│   │   ├── chr19_20Mb.bed
+│   │   ├── chr19_20Mb.fa
+│   │   └── chr19_20Mb.gtf
+│   └── RNA-seq-sample-data/
+│       ├── Sample_1_R1.fastq.gz
+│       ├── Sample_1_R2.fastq.gz
+│       ...
+```
+```
