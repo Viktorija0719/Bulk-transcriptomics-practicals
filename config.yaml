@@ -25,7 +25,7 @@ genome:
   gtf: data/data_ref_annot/chr19_20Mb.gtf
 
 star:
-  runThreadN: 16  
+  runThreadN: 16  # Adjust based on your CPU cores
   genomeSAindexNbases: 11
   outSAMtype: BAM SortedByCoordinate
 
@@ -42,4 +42,3 @@ bbduk:
   tbo: true
   qtrim: "r"
   trimq: 10
-
