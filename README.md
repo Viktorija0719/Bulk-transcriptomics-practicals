@@ -51,5 +51,8 @@ The workflow will create and use the following directories:
 ### Running the Workflow
 
 
+![image](https://github.com/Viktorija0719/Bulk-transcriptomics-practicals/assets/150614034/eeac6093-e0fe-4789-8852-1093cff44369)
+
+![image](https://github.com/Viktorija0719/Bulk-transcriptomics-practicals/assets/150614034/eea18a50-a1cf-4223-b1a9-085ce4b79f05)
 
 
